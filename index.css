@@ -1,0 +1,677 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+main {
+    flex: 1;
+}
+
+/* Navbar logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 70px;  
+    height: 70px; 
+    margin-right: 10px; }
+
+/* Banner icon */
+.banner h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-icon {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+header {
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #e5e7eb;
+    position: relative;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #048DDA;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color:#1c4b82;
+    font-size: 18px;
+    font-weight: bolder;
+}
+.nav-links a:hover {
+    color: #048DDA;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+}
+
+.menu-bar {
+    width: 25px;
+    height: 3px;
+    background-color: #1c4b82;
+    margin: 4px 0;
+}
+
+.banner {
+    background-color: #041735;
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.banner h1 {
+    margin-bottom: 0;
+    font-size: 24px;
+}
+
+main {
+    padding: 20px;
+}
+
+.intro h2, .description h3 {
+    color: #1c4b82;
+    margin-bottom: 10px;
+}
+
+.intro p, .description p {
+    color: #333;
+}
+@media screen and (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background-color: white;
+        width: 100%;
+        height: 0;
+        overflow: hidden;  
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+ 
+
+    }
+
+    .nav-links.open {
+        height: auto;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+}
+
+
+footer {
+    background-color: #048DDA;
+    color: #fff;
+    margin-top: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+
+
+
+
+/* home Section */
+.home-section {
+    color: #048DDA;
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.home-content {
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.home-section h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+    animation: pulseTextShadow 1s infinite;
+}
+
+.home-section p {
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseTextShadow {
+    0%, 100% {
+        text-shadow: 0 0 10px #048DDA;
+    }
+    50% {
+        text-shadow: 0 0 20px #048DDA;
+    }
+}
+
+/* About Us Section */
+.about-us {
+    padding: 40px 20px;
+    text-align: center;
+
+}
+
+.about-us h2 {
+    font-size: 2em;
+    color: #1c4b82;
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    font-size: 1.2em;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+/* Featured Books Section */
+.featured-books {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.featured-books h2 {
+    font-size: 2em;
+    color: #1c4b82;
+    margin-bottom: 20px;
+}
+
+.book-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.book-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+}
+
+.book-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.book-card h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.book-card p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.book-card .btn {
+    background-color: #048DDA;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.book-card .btn:hover {
+    background-color: #036ba0;
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.why-choose-us h2 {
+    font-size: 2em;
+    color: #1c4b82;
+    margin-bottom: 20px;
+}
+
+.why-choose-us ul {
+    list-style: none;
+    padding: 0;
+}
+
+.why-choose-us ul li {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 10px;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2em;
+    color: #1c4b82;
+    margin-bottom: 20px;
+}
+
+.testimonials p {
+    font-size: 1.2em;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+
+/* contact form */
+.contact-form {
+    background-color: white;
+    padding: 20px;
+    max-width: 600px;
+    margin: 30px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+    color: #1c4b82;
+}
+.contact-form p {
+    font-size: 16px;
+    margin-bottom: 40px;
+    color: #666;
+    text-align: center;
+}
+
+.contact-form input, .contact-form select, .contact-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+/* .contact-form textarea{
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    height: 50px;
+    resize: vertical;
+} */
+
+.contact-form .book-form textarea {
+    height: 100px; /* Default height for the textarea */
+    resize: vertical; /* Allows users to resize vertically only */
+}
+.contact-form button {
+    background-color: #1c4b82;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #048DDA;
+}
+
+/*social links and contact section */
+
+.contact-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.contact-item {
+    flex: 1;
+    min-width: 200px;
+    margin: 20px;
+}
+
+.contact-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #1c4b82;
+}
+
+.contact-item p {
+    font-size: 16px;
+    color: #666;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #1c4b82;
+}
+
+.social-icon {
+    display: inline-block;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+/* card for community section*/
+
+
+h2 {
+    text-align: center;
+    color: #1c4b82;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.post-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post-card h3 {
+    color:black;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.post-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.post-card button {
+    background-color: #1c4b82;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.post-card button:hover {
+    background-color: #048DDA;
+}
+
+@media (min-width: 768px) {
+    .community-partnerships {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .post-card {
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .community-partnerships {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
+
+/* Books Collection*/
+.container {
+    display: flex;
+    margin: 20px;
+}
+
+.book-section {
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#search {
+    width: 60%;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.book-card {
+    width: 200px;
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.book-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.book-card h4 {
+    font-size: 14px;
+    color: #333;
+}
+
+/*book list table*/
+.book-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.book-list table, .book-list th, .book-list td {
+    border: 1px solid #ddd;
+}
+
+.book-list th, .book-list td {
+    padding: 10px;
+    text-align: left;
+}
+
+.book-list th {
+    background-color: #f4f4f4;
+}
+
+.book-list img {
+    max-height: 50px;
+}
+
+.book-list a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.book-list a:hover {
+    text-decoration: underline;
+}
+
+
+/*blogs Card */
+
+.blogs-section h2 {
+    color: #1c4b82;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2em;
+}
+
+.blog-card {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 4px solid #048DDA;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.blog-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: black;
+}
+
+.blog-card p {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.blog-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.blog-form h4 {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    color: #1c4b82;
+}
+
+.blog-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    height: 100px;
+    resize: vertical;
+}
+
+.blog-form button {
+    background-color: #1c4b82;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.blog-form button:hover {
+    background-color: #048DDA;
+}
