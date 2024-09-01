@@ -1,6 +1,8 @@
+
+
 <?php
 
-include('db_connect.php');
+include('../db_connect.php');
 
 // Fetch all books from the database
 $result = $conn->query("SELECT * FROM books");
@@ -12,13 +14,31 @@ while($row = $result->fetch_assoc()) {
         'category' => htmlspecialchars($row['genre']),
         'author' => htmlspecialchars($row['writer']),
         'description' => htmlspecialchars($row['description']),
-        'image' => 'uploads/images/' . htmlspecialchars($row['cover_image']),
-        'pdf' => 'uploads/pdfs/' . htmlspecialchars($row['pdf_file']),
+        'image' => '../uploads/images/' . htmlspecialchars($row['cover_image']),
+        'pdf' => '../uploads/pdfs/' . htmlspecialchars($row['pdf_file']),
     ];
 }
 
-$conn->close();
 ?>
+<?php
+    include('customerheader.php');
+    include('customernav.php');
+     // Initialize variables
+     $search_keyword = "";
+
+     // Handle the search query if it's submitted
+     if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['search'])) {
+         $search_keyword = $conn->real_escape_string($_GET['search']);
+         $query = "SELECT * FROM collection WHERE title LIKE '%$search_keyword%' OR author LIKE '%$search_keyword%'";
+     } else {
+         // Default query to fetch all collections
+         $query = "SELECT * FROM collection";
+     }
+ 
+     // Execute the query
+     $result = $conn->query($query);
+?>
+<!-- <link rel="stylesheet" href="../index.css"> -->
 
 <div class="content">
 <main>
@@ -33,11 +53,11 @@ $conn->close();
     </div>
 </main></div>
 
-<?php include('footer.php'); ?>
+<?php include('../footer.php'); ?>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // Books array populated from PHP
+        // Books array 
         const books = <?php echo json_encode($books); ?>;
 
         const bookList = document.getElementById('book-list');
@@ -67,7 +87,8 @@ $conn->close();
             // Search books
             searchInput?.addEventListener('input', function() {
                 const searchTerm = searchInput.value.toLowerCase();
-                const filteredBooks = books.filter(book => book.title.toLowerCase().includes(searchTerm));
+                const filteredBooks = books.filter(book => book.title.toLowerCase().includes(searchTerm)||                    book.author.toLowerCase().includes(searchTerm)
+            );
                 displayBooks(filteredBooks);
             });
         }

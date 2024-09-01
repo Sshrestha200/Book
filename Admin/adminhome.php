@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="../index.css">
 
 <body>
-
 
     <main>
         <section class="home-section">

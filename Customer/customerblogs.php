@@ -1,14 +1,12 @@
 <?php
-    include('header.php');
-    include('nav.php');
-    include('db_connect.php');
+    include('customerheader.php');
+    include('customernav.php');
+    include('../db_connect.php');
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Sanitize input data to prevent SQL injection
         $title = $conn->real_escape_string($_POST['title']);
         $category = $conn->real_escape_string($_POST['category']);
 
-        // Insert the blog into the database
         $sql = "INSERT INTO blogs (title, category) VALUES ('$title', '$category')";
         
         if ($conn->query($sql) === TRUE) {
@@ -23,6 +21,7 @@
     $conn->close();
 
 ?>
+    <link rel="stylesheet" href="../index.css">
 
 <div class="content">
 
@@ -32,11 +31,13 @@
                 <?php while($row = $result->fetch_assoc()): ?>
                 <div class="blog-card">
                     <h3><?php echo $row['title']; ?></h3>
-                    <p><?php echo $row['category']; ?></p>
+                    <h4><?php echo $row['category']; ?></h4>
+                    <p><?php echo $row['created_at']; ?></p>
+
                     </div>
                     <?php endwhile; ?>    
                     
-                <form  action="blogs.php" method="POST">
+                <form  action="customerblogs.php" method="POST">
                 <div class="blog-form">
                 <h4>Write your Blogs here...</h4>  
                     <textarea type="text" name="title" placeholder="Blog Title" required></textarea><br>
@@ -49,5 +50,5 @@
 </div>
 
 <?php
-    include('footer.php');
+    include('../footer.php');
 ?>
