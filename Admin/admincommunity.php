@@ -81,7 +81,9 @@
                 <label>End Time</label>
                 <input type="time" name="end_time" value="<?php echo $edit_row['end_time']; ?>">
                 <label>Description</label>
-                <textarea name="description" required><?php echo $edit_row['description']; ?></textarea>
+                <textarea id="description" name="description" placeholder="Enter your Message" style="width: 100%; height: 100px; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 14px; line-height: 1.5; box-sizing: border-box; resize: vertical; outline: none;">
+<?php echo $edit_row['description']; ?>
+</textarea>
                 <button type="submit" class="btn btn-primary">Update Post</button>
             <?php
                 } else {
@@ -99,8 +101,9 @@
                 <label>End Time</label>
                 <input type="time" name="end_time">
                 <label>Description</label>
-                <textarea name="description" required></textarea>
-                <button type="submit" class="btn btn-primary">Add Post</button>
+                <textarea id="description" name="description" placeholder="Enter your Message" style="width: 100%; height: 100px; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 14px; line-height: 1.5; box-sizing: border-box; resize: vertical; outline: none;">
+
+</textarea>                <button type="submit" class="btn btn-primary">Add Post</button>
             <?php } ?>
         </form>
     </section>

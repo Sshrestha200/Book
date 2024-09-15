@@ -1,3 +1,8 @@
+<?php
+include('../db_connect.php');
+$query = "SELECT title, author, description, image_url FROM featurebooks";
+$result = mysqli_query($conn, $query);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,27 +24,19 @@
         <section class="featured-books">
             <h2>Featured Books</h2>
             <div class="book-grid">
-                <div class="book-card">
-                    <img src="../Media/zerotoone.jpg" alt="Zero to ONE">
-                    <h3>Zero to ONE</h3>
-                    <p>By Peter Thiel</p>
-                    <p>An exploration of startups, innovation, and the future of technology. Peter Thiel provides insight into how to create value in a competitive world.</p>
-                </div>
-                <div class="book-card">
-                    <img src="../Media/howinnovationworks.jpg" alt="How Innovation Works">
-                    <h3>How Innovation Works</h3>
-                    <p>By Matt Ridley</p>
-                    <p>Discover the driving forces behind the world's most groundbreaking innovations. Matt Ridley delves into the stories of the innovators who changed the world.</p>
-                </div>
-                <div class="book-card">
-                    <img src="../Media/stupore.jpg" alt="Stupore">
-                    <h3>Stupore</h3>
-                    <p>By Amélie Nothomb</p>
-                    <p>A captivating novel that intertwines the nuances of human emotion with a gripping narrative. Amélie Nothomb's storytelling leaves readers both stunned and thoughtful.</p>
-                </div>
+                <?php
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo '<div class="book-card">';
+                    echo '<img src="../uploads/images/' . $row['image_url'] . '" alt="' . $row['title'] . '">';
+                    echo '<h3>' . $row['title'] . '</h3>';
+                    echo '<p>By ' . $row['author'] . '</p>';
+                    echo '<p>' . $row['description'] . '</p>';
+                    echo '</div>';
+                }
+                ?>
             </div>
         </section>
-    
+
         <section class="why-choose-us">
             <h2>Why The Book Nook?</h2>
             <ul>
@@ -57,9 +54,6 @@
         </section>
     </main>
     
-
     <script src="script.js" defer></script>
-
-
 </body>
 </html>

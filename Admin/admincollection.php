@@ -130,8 +130,9 @@ $result = $conn->query("SELECT * FROM books");
                 <label>Author</label>
                 <input type="text" id="writer" name="writer" value="<?php echo $edit_row['writer']; ?>" placeholder="Enter Author Name" required>
                 <label>Description</label>
-                <input type="textarea" id="description" name="description" class="form-control" value="<?php echo $edit_row['description']; ?>" placeholder="Enter Description" required>
-                <label>Cover Image</label>
+                <textarea id="description" name="description" placeholder="Description" style="width: 100%; height: 100px; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 14px; line-height: 1.5; box-sizing: border-box; resize: vertical; outline: none;">
+<?php echo $edit_row['description']; ?>
+</textarea>                <label>Cover Image</label>
                 <?php if (!empty($edit_row['cover_image'])): ?>
                     <br>
                     <img src="../uploads/images/<?php echo $edit_row['cover_image']; ?>" alt="Cover Image" width="100"><br>
@@ -154,8 +155,8 @@ $result = $conn->query("SELECT * FROM books");
                 <label>Writer</label>
                 <input type="text" id="writer" name="writer" placeholder="Enter Author Name" required>
                 <label>Description</label>
-                <input type="textarea" id="description" name="description" class="form-control" placeholder="Enter Description" required></input>
-                <label>Cover Image</label>
+                <textarea id="description" name="description" placeholder="Description" style="width: 100%; height: 100px; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 14px; line-height: 1.5; box-sizing: border-box; resize: vertical; outline: none;">
+</textarea>                <label>Cover Image</label>
                 <input type="file" id="cover_image" name="cover_image" accept="image/*" required class="form-control">
                 <label>PDF File</label>
                 <input type="file" id="pdf_file" name="pdf_file" accept="application/pdf" required class="form-control">

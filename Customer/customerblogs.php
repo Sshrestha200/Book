@@ -40,7 +40,7 @@
                 <form  action="customerblogs.php" method="POST">
                 <div class="blog-form">
                 <h4>Write your Blogs here...</h4>  
-                    <textarea type="text" name="title" placeholder="Blog Title" required></textarea><br>
+                    <input type="text" name="title" placeholder="Blog Title" required></input><br>
                     <textarea name="category" placeholder="Blog Description" required></textarea><br>
                     <button type="submit">Post</button>
                 </div>

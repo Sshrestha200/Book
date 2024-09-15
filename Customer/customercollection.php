@@ -42,7 +42,7 @@ while($row = $result->fetch_assoc()) {
 
 <div class="content">
 <main>
-    <h1>Book Collection</h1>
+    <h1> Collection</h1>
     
     <!-- Search Input -->
     <input type="text" id="search" placeholder="Search Books" style="margin-bottom: 20px; padding: 10px; width: 100%; max-width: 400px; border-radius: 5px; border: 1px solid #ccc;">

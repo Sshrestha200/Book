@@ -11,11 +11,11 @@
         $gender = $conn->real_escape_string($_POST['gender']);
         $mobile = $conn->real_escape_string($_POST['mobile']);
         $address = $conn->real_escape_string($_POST['address']);
-        $textarea = $conn->real_escape_string($_POST['textarea']);
+        $message = $conn->real_escape_string($_POST['message']);
 
         // Insert form data into the database
         $sql = "INSERT INTO contact (full_name, email, gender, mobile, address, message) 
-                VALUES ('$full_name', '$email', '$gender', '$mobile', '$address', '$textarea')";
+                VALUES ('$full_name', '$email', '$gender', '$mobile', '$address', '$message')";
         
         if ($conn->query($sql) === TRUE) {
             $message = "Message sent successfully!";
@@ -49,7 +49,8 @@
                     </select>
                     <input type="tel" id="mobile" name="mobile" placeholder="Enter Mobile No" maxlength="10" required>
                     <input type="text" id="address" name="address" placeholder="Enter Address" required>
-                    <input type="textarea" id="textarea" name="textarea" placeholder="Enter your Message" >
+                    <textarea id="textarea" name="message" placeholder="Enter your Message" style="width: 100%; height: 100px; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 14px; line-height: 1.5; box-sizing: border-box; resize: vertical; outline: none;" required></textarea>
+
 
                     <button type="submit">Submit</button>
                 </form>

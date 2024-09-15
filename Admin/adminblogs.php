@@ -58,20 +58,19 @@
                             $edit_row = $edit_result->fetch_assoc();
                     ?>
                         <input type="hidden" name="blog_id" value="<?php echo $edit_row['id']; ?>">
-                        <textarea name="title" placeholder="Blog Title" required><?php echo $edit_row['title']; ?></textarea><br>
+                        <input type="text" name="title" placeholder="Blog Title" required><?php echo $edit_row['title']; ?></input><br>
                         <textarea name="category" placeholder="Blog Description" required><?php echo $edit_row['category']; ?></textarea><br>
                         <button type="submit">Update Blog</button>
                     <?php
                         } else {
                     ?>
-                        <textarea name="title" placeholder="Blog Title" required></textarea><br>
+                        <input type="text" name="title" placeholder="Blog Title" required></input><br>
                         <textarea name="category" placeholder="Blog Description" required></textarea><br>
                         <button type="submit">Post Blog</button>
                     <?php } ?>
                 </div>
             </form>
         </section>
-
         <section class="book-list">
             <h2>Blogs</h2>
             <table class="table table-striped">

@@ -83,7 +83,10 @@
                     </select>
                     <input type="tel" id="mobile" name="mobile" placeholder="Enter Mobile No" maxlength="10" value="<?php echo $edit_row['mobile']; ?>" required>
                     <input type="text" id="address" name="address" placeholder="Enter Address" value="<?php echo $edit_row['address']; ?>" required>
-                    <input type="textarea" id="textarea" name="textarea" placeholder="Your message" value="<?php echo $edit_row['message']; ?>" required>
+                    <textarea id="textarea" name="textarea" placeholder="Enter your Message" style="width: 100%; height: 100px; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 14px; line-height: 1.5; box-sizing: border-box; resize: vertical; outline: none;">
+<?php echo $edit_row['message']; ?>
+</textarea>
+
                     <button type="submit">Update Contact</button>
                 <?php
                     } else {
@@ -98,7 +101,7 @@
                     </select>
                     <input type="tel" id="mobile" name="mobile" placeholder="Enter Mobile No" maxlength="10" required>
                     <input type="text" id="address" name="address" placeholder="Enter Address" required>
-                    <input type="textarea" id="textarea" name="textarea" placeholder="Your message" required>
+                    <textarea id="textarea" name="message" placeholder="Enter your Message" style="width: 100%; height: 100px; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 14px; line-height: 1.5; box-sizing: border-box; resize: vertical; outline: none;"></textarea>
                     <button type="submit">Submit</button>
                 <?php } ?>
             </form>
